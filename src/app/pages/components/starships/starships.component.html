@@ -1,0 +1,13 @@
+<div class="search">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Enter search starship">
+    <button (click)="search()" >Search</button>
+</div>
+
+
+<div class="container">
+    <div class="item" *ngFor="let starship of starships;">
+        <a [routerLink]="['/starships/', starship.url.substring(32, starship.url.length - 1)]">
+         {{ starship.name }}
+        </a>
+    </div>
+</div>

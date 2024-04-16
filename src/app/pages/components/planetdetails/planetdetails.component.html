@@ -1,0 +1,41 @@
+<div class="body">
+    <div class="container">
+        <div class="main">
+            <h2>{{ planet?.name }}</h2>
+            <div class="info"> 
+                <span><strong>Climate:</strong> {{ planet?.climate }}</span><br>
+                <span><strong>Gravity:</strong> {{ planet?.gravity }}</span><br>
+                <span><strong>Diameter:</strong> {{ planet?.diameter }}</span><br>
+                <span><strong>Rotation Period:</strong> {{ planet?.rotation_period }}</span><br>
+                <span><strong>Orbital Period:</strong> {{ planet?.orbital_period }}</span><br>
+                <span><strong>Population:</strong> {{ planet?.population }}</span><br>
+                <span><strong>Surface water:</strong> {{ planet?.surface_water }}</span><br>
+                <span><strong>Terrain:</strong> {{ planet?.terrain }}</span><br>
+            </div>
+        </div>
+
+    </div>
+            
+    <div  class="releated">
+        <div class="item">
+            <h2>Realeted Residents</h2>
+            <div *ngFor="let res of residents" >
+                <a *ngIf="res" [routerLink]="['/characters/',res.url.substring(29, res.url.length - 1)]">
+                    {{res.name}}
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Realeted Films</h2>
+            <div *ngFor="let film of films" >
+                <a *ngIf="film" [routerLink]="['/films/',film.url.substring(28, film.url.length - 1)]">
+                    {{film.title}}
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

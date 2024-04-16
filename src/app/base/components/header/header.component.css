@@ -1,0 +1,29 @@
+.main{
+    height: 63px;
+    background-color: black;
+    display: flex;
+   
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.nav_items_list{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.nav_item{
+    color: lightblue;
+    cursor: pointer;
+    margin-left: 30px;
+}
+a{
+   font-size: large;
+    color: #afd614;
+}
+a:active {
+    color: rgb(187, 217, 18);
+}

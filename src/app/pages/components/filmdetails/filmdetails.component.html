@@ -1,0 +1,51 @@
+<div class="body">
+
+
+    <div class="container" >
+        <div class="main" *ngIf="film">
+            <h2>{{film.title}}</h2>
+            <div class="info">
+                <span><strong>Realise date</strong>: {{film?.release_date}}</span><br>
+                <span><strong>Episode</strong>: {{film?.episode_id}}</span><br>
+                <span><strong>Opening crawl</strong>: {{film?.opening_crawl}}</span><br>
+                <span><strong>Director</strong>: {{film?.director}}</span><br>
+                <span><strong>Producer</strong>: {{film?.producer}}</span><br>
+            </div>
+            
+        </div>
+
+    </div>
+
+    
+
+    <div class="releated" >
+        <div class="item">
+            <h2>Realated characters</h2>
+            <div *ngFor = "let char of characters">
+                 <a *ngIf="char" [routerLink]= "['/characters/', char.url.substring(29, char.url.length - 1)]"> {{char.name}}   </a>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Realated planets</h2>
+            <div *ngFor="let planet of planets">
+                <a *ngIf="planet" [routerLink]= "['/planets/', planet.url.substring(30, planet.url.length - 1)]" >  {{planet.name}} </a>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Realated Species</h2>
+            <div *ngFor="let specie of species">
+                <a *ngIf="specie" [routerLink]= "['/species/', specie.url.substring(30, specie.url.length - 1)]" >  {{specie.name}} </a>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Realated Starships</h2>
+            <div *ngFor="let starship of starships">
+                <a *ngIf = "starship" [routerLink]= "['/starships/', starship.url.substring(32, starship.url.length - 1)]" >  {{starship.name}} </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

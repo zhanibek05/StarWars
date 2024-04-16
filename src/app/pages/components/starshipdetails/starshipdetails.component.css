@@ -1,0 +1,50 @@
+
+.body{
+    background-image: url(https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg?region=0%2C0%2C1600%2C900);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-size: 15px;
+    font-family: biko;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    background-attachment: fixed;
+    
+}
+
+.info{
+    color: rgba(0,0,0,.54);
+}
+
+.main , .item{
+    background-color: white;
+    padding: 40px;
+    padding-top: 5px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.main, .releated{
+    width: 800px;
+    
+}
+
+.releated{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 0;
+}
+.item{
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 200px;
+    max-height: 200px;
+    overflow: auto;
+}
+
+a{
+    text-decoration: none;
+    color: #039BE5;
+}

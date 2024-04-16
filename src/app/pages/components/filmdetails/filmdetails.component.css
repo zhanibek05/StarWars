@@ -1,0 +1,48 @@
+
+.body{
+    background-image: url(https://4kwallpapers.com/images/wallpapers/the-mandalorian-baby-yoda-the-child-season-2-black-3840x2560-2805.png);
+    
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-size: 15px;
+    font-family: biko;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-attachment: fixed;
+}
+
+.info{
+    color: rgba(0,0,0,.54);
+}
+
+.main , .item{
+    background-color: white;
+    padding: 40px;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+.main, .releated{
+    width: 800px;
+}
+
+.releated{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    
+}
+.item{
+    margin: 10px;
+   
+    width: 300px;
+    max-height: 200px;
+    overflow: auto;
+    
+}
+
+a{
+    text-decoration: none;
+    color: #039BE5;
+}

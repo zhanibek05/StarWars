@@ -1,0 +1,49 @@
+.stars{
+    background: url(http://www.script-tutorials.com/demos/360/images/stars.png) top center #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 10;
+}
+
+.logo{
+    margin:0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px; /* Закругленные углы слева */
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Закругленные углы справа */
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

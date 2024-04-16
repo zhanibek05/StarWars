@@ -1,0 +1,85 @@
+
+
+.logo{
+    color: white;
+    margin:0;
+    padding: 0;
+}
+span{
+  color: #FFFF00;
+  position: relative;
+  left: -7px;
+  bottom: 15px;
+}
+
+.container{
+  background: url(http://www.script-tutorials.com/demos/360/images/stars.png);
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 130px;
+}
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  input[type="text"] {
+    width: 400px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px 0 0 5px; 
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  button {
+    margin-left: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(12, 1, 1) ;
+    color: rgb(216, 215, 215);
+    border-color: #FFFF00;
+    border-radius: 9px; 
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2d2d28;
+  }
+  
+
+.searchResults{
+  width: 1000px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border:3px solid #FFFF00;
+  border-radius: 9px;
+  margin: 20px;
+  justify-content: center;
+
+}
+
+.main{
+  margin: 20px;
+  border: 5px #FFFF00;
+}
+
+a{
+  text-decoration: none;
+  color: #039BE5;;
+}
+
+

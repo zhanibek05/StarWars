@@ -1,0 +1,15 @@
+<div class="search">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Enter search species">
+    <button (click)="search()" >Search</button>
+</div>
+
+
+<div class="container">
+    <div class="item" *ngFor="let specie of species; let i = index">
+        <a [routerLink]="['/species/',specie.url.substring(30, specie.url.length - 1) ]">
+         {{ specie.name }}
+        </a>
+        
+    </div>
+
+</div>

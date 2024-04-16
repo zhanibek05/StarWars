@@ -1,0 +1,46 @@
+<div class="body">
+
+
+    
+<div class="container">
+    <div class="main">
+        <h2>{{starship?.name}}</h2>
+        <div  class="info">
+            <span><strong>Model</strong>: {{starship?.model}}</span><br>
+            <span><strong>Manufacturer</strong>: {{starship?.manufacturer}}</span><br>
+            <span><strong>Cost</strong>: {{starship?.cost_in_credits}} credits</span><br>
+            <span><strong>Lenght</strong>: {{starship?.length}}</span><br>
+            <span><strong>Max atmosphering speed</strong>: {{starship?.max_atmosphering_speed}}</span><br>
+            <span><strong>Crew</strong>: {{starship?.crew}}</span>  <br>
+            <span><strong>Passengers</strong>: {{starship?.passengers}}</span><br>
+            <span><strong>Cargo capacity</strong>: {{starship?.cargo_capacity}}</span><br>
+            <span><strong>Consumables</strong>: {{starship?.consumables}}</span><br>
+            <span><strong>Hyperdrive rating</strong>: {{starship?.hyperdrive_rating}}</span><br>
+            <span><strong>MGLT</strong>: {{starship?.MGLT}}</span><br>
+            <span><strong>Starship class</strong>: {{starship?.starship_class}}</span><br>
+    
+        </div>
+    
+    </div>
+</div>
+
+
+<div class="releated">
+    <div class="item">
+        <h2>Releated Films</h2>
+        <div *ngFor="let film of films">
+            <a [routerLink]="['/films/', film.url.substring(28, film.url.length - 1)]">{{film.title}}</a>
+        </div>
+        
+    </div>
+
+    <div class="item">
+        <h2>Releated Pilots</h2>
+        <div *ngFor="let pilot of pilots">
+            <a [routerLink]="['/characters/', pilot.url.substring(29, pilot.url.length - 1)]">{{pilot.name}}</a>
+        </div>
+    </div>
+</div>
+
+
+</div>

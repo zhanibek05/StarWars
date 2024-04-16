@@ -1,0 +1,35 @@
+<div class="body">
+
+    <div class="container">
+        <div class="main">
+            <h2>{{specie?.name}}</h2>
+            <div class="info">
+                
+                <span><strong>Name</strong>: {{specie?.name}}</span><br>
+                <span><strong>Classification</strong>: {{specie?.classification}}</span><br>
+                <span><strong>designation</strong>: {{specie?.designation}}</span><br>
+                <span><strong>average_height</strong>: {{specie?.average_height}}</span><br>
+                <span><strong>skin_colors</strong>: {{specie?.skin_colors}}</span><br>
+                <span><strong>hair_colors</strong>: {{specie?.hair_colors}}</span><br>
+                <span><strong>eye_colors</strong>: {{specie?.eye_colors}}</span><br>
+                <span><strong>average_lifespan</strong>: {{specie?.average_lifespan}}</span><br>
+                <span *ngIf="homeworld" >Homeworld: <a [routerLink]="['/planets/', homeworld.url.substring(30, homeworld.url.length - 1)]">{{homeworld.name}}</a></span><br>
+                <span><strong>language</strong>: {{specie?.language}}</span><br>
+
+            </div>
+           
+        </div>
+        
+        
+    </div>
+    
+    <div class="releated">
+        <div class="item">
+            <h2>People</h2>
+            <div *ngFor="let p of people">
+                <a [routerLink]="['/characters/',p.url.substring(29, p.url.length - 1)]"> {{p.name}} </a>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="body">
+    <div class="container">
+        
+        <div *ngIf = "character" class="main">
+            <h2> {{character.name}}</h2>
+            <div class="info">
+                <span>Birth year: {{character.birth_year}}</span>
+                <br>
+                <span>Height :{{character.height}}</span><br>
+                <span>Eye color: {{character.eye_color}}</span><br>
+                <span>Skin color: {{character.skin_color}}</span><br>
+                <span>Mass: {{character.mass}}</span><br>
+                <span>Gender: {{character.gender}}</span><br>
+                <span>Hair color: {{character.hair_color}}</span><br>
+                <span *ngIf="homeworld" >Homeworld: <a [routerLink]="['/planets/', homeworld.url.substring(30, homeworld.url.length - 1)]">{{homeworld.name}}</a></span>
+            </div>
+      
+        </div>
+        
+        <div class="releated">
+            <div class="item">
+                <h4>Starships</h4>
+                <div  *ngFor = "let starship of starships">
+                    <div *ngIf="starship.url">
+                        <a [routerLink]="['/starships/', starship.url.substring(32, starship.url.length - 1)]"> {{starship.name}} </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <h4>Films</h4>
+                <div *ngFor="let film of films" >
+                    <div *ngIf="film">
+                        <a [routerLink]="['/films/', film.url.substring(28, film.url.length - 1)]">{{film.title}}</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    
+    </div>
+    
+</div>
+
+
+

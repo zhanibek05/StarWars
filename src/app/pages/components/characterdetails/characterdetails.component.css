@@ -1,0 +1,43 @@
+
+.body{
+    background-image: url(https://i.pinimg.com/originals/96/43/80/9643807b4d7419301aa3caf3de4e46e8.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-size: 15px;
+    font-family: biko;
+    display: flex;
+    justify-content: center;
+}
+
+.info{
+    color: rgba(0,0,0,.54);
+}
+
+.main , .item{
+    background-color: white;
+    padding: 40px;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+.main, .releated{
+    width: 800px;
+}
+
+.releated{
+    display: flex;
+    flex-direction: row;
+    
+}
+.item{
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 200px;
+}
+
+a{
+    text-decoration: none;
+    color: #039BE5;
+}
