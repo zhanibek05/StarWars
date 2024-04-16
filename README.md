@@ -30,6 +30,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 Вся информация о вселенной "Star Wars" была взята из открытого API - https://swapi.dev/documentation
 
+Хостинг сделал с помощью Firebase.
+
+Ссылка https://starwars-ac3c5.web.app/home
+
 
 ## Этапы разработки
 Базовый макет веб-приложения был построен с помощью компонентов. Component - это абстракция которая является основой для любого Angular приложения. Это позволяет декомпозировать большой проект в небольшие независимые компоненты со своими обьектами.
