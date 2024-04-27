@@ -33,7 +33,7 @@ export class FilmdetailsComponent implements OnInit{
     const id = Number(routeParams.get('id'));
     
     this.postService.getFilmById(id).subscribe((data) => {
-      this.film = data;
+      this.film = data.result.properties;
 
     this.getCharacters();
     this.getStarships();
@@ -48,7 +48,7 @@ export class FilmdetailsComponent implements OnInit{
   getCharacters():void{
     this.film.characters.forEach((url: string) => {
       this.http.get(url).subscribe((data: any) =>{
-        this.characters.push(data);
+        this.characters.push(data.result);
       })
     });
    }
@@ -56,21 +56,21 @@ export class FilmdetailsComponent implements OnInit{
    getPlanets():void{
     this.film.planets.forEach((url: string) => {
       this.http.get(url).subscribe((data: any) =>{
-        this.planets.push(data);
+        this.planets.push(data.result);
       })
     });
    }
    getStarships():void{
     this.film.starships.forEach((url: string) => {
       this.http.get(url).subscribe((data: any) =>{
-        this.starships.push(data);
+        this.starships.push(data.result);
       })
     });
    }
    getSpecies():void{
     this.film.species.forEach((url: string) => {
       this.http.get(url).subscribe((data: any) =>{
-        this.species.push(data);
+        this.species.push(data.result);
       })
     });
    }

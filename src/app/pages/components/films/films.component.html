@@ -1,8 +1,8 @@
 
 <div class="container">
     <div class="item" *ngFor="let film of films; let i = index">
-        <a [routerLink]="['/films/',film.url.substring(28, film.url.length - 1)]">
-         {{ film.title }}
+        <a [routerLink]="['/films/',film.uid]">
+         {{ film.properties.title }}
         </a>
         
     </div>

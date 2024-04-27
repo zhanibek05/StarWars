@@ -22,6 +22,7 @@ export class CharacterdetailsComponent implements OnInit{
   films: Film[] = [];
   starships: Starship[] = [];
   homeworld: any;
+  homeworld_id: number = 0;
   
   character: any;
 
@@ -43,16 +44,18 @@ export class CharacterdetailsComponent implements OnInit{
     
     this.postService.getCharacterById(id).subscribe((data) => {
   
-      this.character = data
-      
-      this.http.get(data.homeworld).subscribe((data: any) =>{
-        this.homeworld = data;
+      this.character = data.result.properties;
+    
+      this.http.get(this.character.homeworld).subscribe((data: any) =>{
+        this.homeworld = data.result.properties;
+        this.homeworld_id = Number(data.result.uid);
       })
       
-
-      this.getStarships();
       
-      this.getFilms();
+
+      // this.getStarships();
+      
+      // this.getFilms();
         
     })
 
@@ -60,21 +63,21 @@ export class CharacterdetailsComponent implements OnInit{
   }
 
 
-  getStarships():void{
-    this.character.starships.forEach((url: string) => {
-      this.http.get(url).subscribe((data: any) =>{
-        this.starships.push(data);
-      })
-    });
-   }
+  // getStarships():void{
+  //   this.character.starships.forEach((url: string) => {
+  //     this.http.get(url).subscribe((data: any) =>{
+  //       this.starships.push(data);
+  //     })
+  //   });
+  //  }
 
-   getFilms():void{
-    this.character.films.forEach((url: string) => {
-      this.http.get(url).subscribe((data: any) =>{
-        this.films.push(data);
-      })
-    });
-   }
+  //  getFilms():void{
+  //   this.character.films.forEach((url: string) => {
+  //     this.http.get(url).subscribe((data: any) =>{
+  //       this.films.push(data);
+  //     })
+  //   });
+  //  }
    
 
 }

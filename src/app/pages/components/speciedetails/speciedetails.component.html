@@ -13,7 +13,7 @@
                 <span><strong>hair_colors</strong>: {{specie?.hair_colors}}</span><br>
                 <span><strong>eye_colors</strong>: {{specie?.eye_colors}}</span><br>
                 <span><strong>average_lifespan</strong>: {{specie?.average_lifespan}}</span><br>
-                <span *ngIf="homeworld" >Homeworld: <a [routerLink]="['/planets/', homeworld.url.substring(30, homeworld.url.length - 1)]">{{homeworld.name}}</a></span><br>
+                <span *ngIf="homeworld" >Homeworld: <a [routerLink]="['/planets/', homeworld.uid]">{{homeworld.properties.name}}</a></span><br>
                 <span><strong>language</strong>: {{specie?.language}}</span><br>
 
             </div>
@@ -27,7 +27,7 @@
         <div class="item">
             <h2>People</h2>
             <div *ngFor="let p of people">
-                <a [routerLink]="['/characters/',p.url.substring(29, p.url.length - 1)]"> {{p.name}} </a>
+                <a [routerLink]="['/characters/',p.uid]"> {{p.properties.name}} </a>
             </div>
         </div>
     </div>

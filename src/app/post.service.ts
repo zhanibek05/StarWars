@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostService {
-  baseUrl = "https://swapi.dev/api/"
+  baseUrl = "https://swapi.tech/api/"
   constructor(private http: HttpClient) { }
 
   getCharacters():Observable<any>{
@@ -50,23 +50,23 @@ export class PostService {
   }
 
   searchPlanets(query: string): Observable<any> {
-    return this.http.get(this.baseUrl + "planets/?search=" + query);
+    return this.http.get(this.baseUrl + "planets/?name=" + query);
   }
 
   searchCharacters(query: string): Observable<any> {
-    return this.http.get(this.baseUrl + "people/?search=" + query);
+    return this.http.get(this.baseUrl + "people/?name=" + query);
   }
 
   searchSpecies(query: string): Observable<any> {
-    return this.http.get(this.baseUrl + "species/?search=" + query);
+    return this.http.get(this.baseUrl + "species/?name=" + query);
   }
 
   searchStarships(query: string): Observable<any> {
-    return this.http.get(this.baseUrl + "starships/?search=" + query);
+    return this.http.get(this.baseUrl + "starships/?name=" + query);
   }
 
   searchFilms(query: string): Observable<any> {
-    return this.http.get(this.baseUrl + "films/?search=" + query);
+    return this.http.get(this.baseUrl + "films/?title=" + query);
   }
   
 

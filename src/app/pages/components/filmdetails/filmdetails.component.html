@@ -22,25 +22,25 @@
         <div class="item">
             <h2>Realated characters</h2>
             <div *ngFor = "let char of characters">
-                 <a *ngIf="char" [routerLink]= "['/characters/', char.url.substring(29, char.url.length - 1)]"> {{char.name}}   </a>
+                 <a *ngIf="char" [routerLink]= "['/characters/', char.uid]"> {{char.properties.name}}   </a>
             </div>
         </div>
         <div class="item">
             <h2>Realated planets</h2>
             <div *ngFor="let planet of planets">
-                <a *ngIf="planet" [routerLink]= "['/planets/', planet.url.substring(30, planet.url.length - 1)]" >  {{planet.name}} </a>
+                <a *ngIf="planet" [routerLink]= "['/planets/', planet.uid]" >  {{planet.properties.name}} </a>
             </div>
         </div>
         <div class="item">
             <h2>Realated Species</h2>
             <div *ngFor="let specie of species">
-                <a *ngIf="specie" [routerLink]= "['/species/', specie.url.substring(30, specie.url.length - 1)]" >  {{specie.name}} </a>
+                <a *ngIf="specie" [routerLink]= "['/species/', specie.uid]" >  {{specie.properties.name}} </a>
             </div>
         </div>
         <div class="item">
             <h2>Realated Starships</h2>
             <div *ngFor="let starship of starships">
-                <a *ngIf = "starship" [routerLink]= "['/starships/', starship.url.substring(32, starship.url.length - 1)]" >  {{starship.name}} </a>
+                <a *ngIf = "starship" [routerLink]= "['/starships/', starship.uid]" >  {{starship.properties.name}} </a>
             </div>
         </div>
     </div>

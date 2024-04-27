@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PlanetdetailsComponent } from '../planetdetails/planetdetails.component';
@@ -9,12 +9,13 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-planets',
   standalone: true,
-  imports: [RouterLink, NgFor, PlanetdetailsComponent, FormsModule],
+  imports: [RouterLink, NgFor, PlanetdetailsComponent, FormsModule, NgIf],
   providers: [PostService],
   templateUrl: './planets.component.html',
   styleUrl: './planets.component.css'
 })
 export class PlanetsComponent implements OnInit {
+  searchedPlanets: any = [];
   planets: any = [];
   searchQuery: string = '';
 
@@ -31,7 +32,7 @@ export class PlanetsComponent implements OnInit {
 
   search(): void {
     this.postService.searchPlanets(this.searchQuery).subscribe((data) => {
-      this.planets = data.results;
+      this.searchedPlanets = data.result;
     })
   }
 

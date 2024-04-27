@@ -5,9 +5,22 @@
 
 
 <div class="container">
-    <div class="item" *ngFor="let starship of starships;">
-        <a [routerLink]="['/starships/', starship.url.substring(32, starship.url.length - 1)]">
-         {{ starship.name }}
-        </a>
+    <div *ngIf="searchQuery.length == 0" class="container">
+        <div class="item" *ngFor="let starship of starships;">
+            <a [routerLink]="['/starships/', starship.uid]">
+             {{ starship.name }}
+            </a>
+        </div>
+    </div>
+    
+    <div *ngIf="searchQuery.length > 0" class="container">
+        <div class="item" *ngFor="let starship of searchedStarships;">
+            <a [routerLink]="['/starships/', starship.uid]">
+             {{ starship.properties.name }}
+            </a>
+        </div>
     </div>
 </div>
+
+
+

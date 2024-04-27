@@ -5,9 +5,19 @@
 
 
 <div class="container">
-    <div class="item" *ngFor="let planet of planets; let i = index">
-        <a [routerLink]="['/planets/', planet.url.substring(30, planet.url.length - 1)]">
-            {{ planet.name }}
-           </a>
+    <div  class="container" *ngIf="searchQuery.length == 0">
+        <div class="item" *ngFor="let planet of planets; let i = index">
+            <a [routerLink]="['/planets/', planet.uid]">
+                {{ planet.name }}
+               </a>
+        </div>
     </div>
+    <div class="container" *ngIf="searchQuery.length > 0"  >
+        <div class="item" *ngFor="let planet of searchedPlanets; let i = index">
+            <a [routerLink]="['/planets/', planet.uid]">
+                {{ planet.properties.name }}
+               </a>
+        </div>
+    </div>
+    
 </div>

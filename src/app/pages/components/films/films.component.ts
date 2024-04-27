@@ -20,20 +20,22 @@ import { FormsModule, NgModel } from '@angular/forms';
 export class FilmsComponent implements OnInit{
   films: any = [];
   searchQuery: string = '';
+  searchedFilm: any = [];
 
   constructor(private postService: PostService){}
 
   ngOnInit(): void {
     
     this.postService.getFilms().subscribe((data) =>{
-      this.films = data.results
+      this.films = data.result;
+      
     })
 
   }
 
   search(): void {
     this.postService.searchFilms(this.searchQuery).subscribe((data) =>{
-      this.films = data.results;
+      this.films = data.result;
     } )
   }
 

@@ -35,11 +35,11 @@ export class StarshipdetailsComponent implements OnInit{
     const id = Number(routeParams.get('id'));
     
     this.postService.getStarshipById(id).subscribe((data) => {
-      this.starship = data;
+      this.starship = data.result.properties;
       //console.log(this.starship?.MGLT);
 
-      this.getFilms();
-      this.getPilots();
+      // this.getFilms();
+      // this.getPilots();
      
     })
 

@@ -3,12 +3,22 @@
     <button class="search_button" (click)="search()" >Search</button>
 </div>
 
-<div class="container">
-    <div class="item" *ngFor="let char of characters; let i = index">
-        <a [routerLink]="['/characters/', char.url.substring(29, char.url.length - 1)]">
-         {{ char.name }}
-        </a>
-    </div>  
+<div  class="container">
+    <div class="container" *ngIf="searchQuery.length == 0">
+        <div  class="item" *ngFor="let char of characters; let i = index">
+            <a [routerLink]="['/characters/', char.uid]">
+            {{ char.name }}
+            </a>
+        </div>  
+    </div>
+    <div class="container" *ngIf="searchQuery.length > 0">
+        <div  class="item" *ngFor="let char of searchedCharacters; let i = index">
+            <a [routerLink]="['/characters/', char.uid]">
+            {{ char.properties.name }}
+            </a>
+        </div>  
+
+    </div>
 </div>
 
 

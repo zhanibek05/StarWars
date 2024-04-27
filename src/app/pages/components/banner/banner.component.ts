@@ -33,19 +33,19 @@ export class BannerComponent implements OnInit{
     if(this.searchQuery.length > 0){
       this.isSearch = !this.isSearch;
       this.postService.searchCharacters(this.searchQuery).subscribe((data) => {
-        this.searchCharacters = data.results;
+        this.searchCharacters = data.result;
       })
       this.postService.searchFilms(this.searchQuery).subscribe((data) => {
-        this.searchFilms = data.results;
+        this.searchFilms = data.result;
       })
       this.postService.searchPlanets(this.searchQuery).subscribe((data) => {
-        this.searchPlanets = data.results;
+        this.searchPlanets = data.result;
       })
       this.postService.searchSpecies(this.searchQuery).subscribe((data) => {
-        this.searchSpecies = data.results;
+        this.searchSpecies = data.result;
       })
       this.postService.searchStarships(this.searchQuery).subscribe((data) => {
-        this.searchStarships = data.results;
+        this.searchStarships = data.result;
       })
     }
     

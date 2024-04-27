@@ -32,40 +32,40 @@ export class PlanetdetailsComponent implements OnInit{
     const id = Number(routeParams.get('id'));
     
     this.postService.getPlanetById(id).subscribe((data) => {
-      this.planet = data;
+      this.planet = data.result.properties;
 
 
-      this.getResidents();
+      // this.getResidents();
 
-      this.getFilms();
+      // this.getFilms();
 
 
     })
 
-    this.getFilms();
+    // this.getFilms();
 
   }
 
-  getResidents():void{
-    if(this.planet){
-      this.planet.residents.forEach((url) => {
-        this.http.get(url).subscribe((data: any) =>{
-          this.residents.push(data);
-        })
-      })
-    }
+  // getResidents():void{
+  //   if(this.planet){
+  //     this.planet.residents.forEach((url) => {
+  //       this.http.get(url).subscribe((data: any) =>{
+  //         this.residents.push(data);
+  //       })
+  //     })
+  //   }
     
-  }
+  // }
 
-  getFilms():void{
-    if(this.planet){
-      this.planet.films.forEach((url:string) => {
-        this.http.get(url).subscribe((data: any) =>{
-          this.films.push(data);
+  // getFilms():void{
+  //   if(this.planet){
+  //     this.planet.films.forEach((url:string) => {
+  //       this.http.get(url).subscribe((data: any) =>{
+  //         this.films.push(data);
           
-        })
-      })
-    }
+  //       })
+  //     })
+  //   }
     
-  }
+  // }
 }

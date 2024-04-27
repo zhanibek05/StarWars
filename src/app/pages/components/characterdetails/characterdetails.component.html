@@ -12,12 +12,12 @@
                 <span>Mass: {{character.mass}}</span><br>
                 <span>Gender: {{character.gender}}</span><br>
                 <span>Hair color: {{character.hair_color}}</span><br>
-                <span *ngIf="homeworld" >Homeworld: <a [routerLink]="['/planets/', homeworld.url.substring(30, homeworld.url.length - 1)]">{{homeworld.name}}</a></span>
+                <span *ngIf="homeworld" >Homeworld: <a [routerLink]="['/planets/', homeworld_id]">{{homeworld.name}}</a></span>
             </div>
       
         </div>
         
-        <div class="releated">
+        <!-- <div class="releated">
             <div class="item">
                 <h4>Starships</h4>
                 <div  *ngFor = "let starship of starships">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             
-        </div>
+        </div> -->
     
     </div>
     

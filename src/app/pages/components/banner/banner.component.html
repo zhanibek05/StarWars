@@ -19,46 +19,46 @@
     
             <div class="searchResults" *ngIf = "searchQuery.length > 0">
                 <div class="main">
-                    <p>Mathed Characters</p>
+                    <p>Matched Characters</p>
                     <div class="item" *ngFor="let char of searchCharacters; let i = index">
-                        <a [routerLink]="['/characters/', char.url.substring(29, char.url.length - 1)]">
-                         {{ char.name }}
+                        <a [routerLink]="['/characters/', char.uid]">
+                         {{ char.properties.name }}
                         </a>
                     </div> 
                 </div>
                 
                 <div  class="main">
-                    <p>Mathed Planets</p>
+                    <p>Matched Planets</p>
                     <div class="item" *ngFor="let planet of searchPlanets; let i = index">
-                        <a [routerLink]="['/planets/', planet.url.substring(30, planet.url.length - 1)]">
-                         {{ planet.name }}
+                        <a [routerLink]="['/planets/', planet.uid]">
+                         {{ planet.properties.name }}
                         </a>
                     </div>
                 </div>
                 
                 <div class="main">
-                    <p>Mathed Starships</p>
+                    <p>Matched Starships</p>
                     <div class="item" *ngFor="let starship of searchStarships; let i = index">
-                        <a [routerLink]="['/starships/', starship.url.substring(32, starship.url.length - 1)]">
-                         {{ starship.name }}
+                        <a [routerLink]="['/starships/', starship.uid]">
+                         {{ starship.properties.name }}
                         </a>
                     </div>
                 </div>
                 
                 <div class="main">
-                    <p>Mathed Species</p>
+                    <p>Matched Species</p>
                     <div class="item" *ngFor="let specie of searchSpecies; let i = index">
-                        <a [routerLink]="['/species/', specie.url.substring(30, specie.url.length - 1)]">
-                         {{ specie.name }}
+                        <a [routerLink]="['/species/', specie.uid]">
+                         {{ specie.properties.name }}
                         </a>
                     </div>
                 </div>
                 
                 <div class="main">
-                    <p>Mathed Films</p>
+                    <p>Matched Films</p>
                     <div class="item" *ngFor="let film of searchFilms; let i = index">
-                        <a [routerLink]="['/films/', film.url.substring(28, film.url.length - 1)]">
-                         {{ film.title }}
+                        <a [routerLink]="['/films/', film.uid]">
+                         {{ film.properties.title }}
                         </a>
                     </div>
                 </div>

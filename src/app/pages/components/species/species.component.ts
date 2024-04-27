@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { StarshipdetailsComponent } from '../starshipdetails/starshipdetails.component';
 import { RouterLink } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { PostService } from '../../../post.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-species',
   standalone: true,
-  imports: [StarshipdetailsComponent, RouterLink, NgFor , FormsModule],
+  imports: [StarshipdetailsComponent, RouterLink, NgFor , FormsModule, NgIf],
   providers: [PostService],
   templateUrl: './species.component.html',
   styleUrl: './species.component.css'
 })
 export class SpeciesComponent implements OnInit{
+  searchedSpecies: any;
   species: any;
   searchQuery: string = '';
   
@@ -33,7 +34,8 @@ export class SpeciesComponent implements OnInit{
 
   search(): void {
     this.postService.searchSpecies(this.searchQuery).subscribe((data) => {
-      this.species = data.results;
+      this.searchedSpecies = data.result;
+      
     } )
   }
 

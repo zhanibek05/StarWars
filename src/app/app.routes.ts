@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 
 export const routes: Routes = [  
     { path: 'home', component: HomeComponent },
+    { path: '', redirectTo:'/home', pathMatch: 'full' },
     { path: 'characters', component: CharactersComponent },  
     { path: 'characters/:id', component: CharacterdetailsComponent},
     { path: 'planets', component: PlanetsComponent},

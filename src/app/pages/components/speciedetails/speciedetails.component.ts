@@ -32,21 +32,22 @@ export class SpeciedetailsComponent implements OnInit{
     const id = Number(routeParams.get('id'));
     
     this.postService.getSpecieById(id).subscribe((data) => {
-      this.specie = data;
+      this.specie = data.result.properties;
       
       this.getPeople();
-      this.http.get(data.homeworld).subscribe((data: any) =>{
-        this.homeworld = data;
+      this.http.get(data.result.properties.homeworld).subscribe((data: any) =>{
+        this.homeworld = data.result;
+        // console.log(this.homeworld);
       })
      
-    })
+    }) 
   }
 
   getPeople():void{
     if(this.specie){
       this.specie.people.forEach((url:string) => {
         this.http.get(url).subscribe((data: any) =>{
-          this.people.push(data);
+          this.people.push(data.result);
           //console.log(data);
         })
       })
